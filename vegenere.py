@@ -23,7 +23,7 @@ message = sys.argv[2]
 print('Do you want to encrypt or decrypt a message? (e/d):')
 answer = input()
 
-#Dictionary für Verschiebung
+#Dictionary for shifting
 rot_list = {'a':1,'b':2,'c':3,'d':4,'e':5,'f':6,'g':7,'h':8,'i':9,'j':10,'k':11,
 'l':12,'m':13,'n':14,'o':15,'p':16,'q':17,'r':18,'s':19,'t':20,'u':21,'v':22,'w':23,'x':24,'y':25,'z':26,
 'A':1,'B':2,'C':3,'D':4,'E':5,'F':6,'G':7,'H':8,'I':9,'J':10,'K':11,
@@ -32,7 +32,7 @@ rot_list = {'a':1,'b':2,'c':3,'d':4,'e':5,'f':6,'g':7,'h':8,'i':9,'j':10,'k':11,
 keylen = len(key)
 messlen = len(message)
 
-#Buchstaben in Zahlen umwandeln 
+#Convert letters to digits
 keylist = []             
 for a in range(0, keylen):
   keylist.append(rot_list[key[a]])
@@ -41,10 +41,9 @@ messlist = []
 for b in range(0, messlen):
   messlist.append(rot_list[message[b]])
 
-    
-#Verrechnung der beiden Listen miteinander
 
-#wie oft wird der Schlüssel angewendet
+
+#How often will the key be used
 fest = keylist
 if (messlen/keylen) >= 1:
   iteration = int(messlen/keylen)
@@ -70,11 +69,12 @@ if answer == 'e':
     for f in range(0,keylen):
       result.append(messlist[f] + keylist[f])
   
-  #Zahlen auf 26 begrenzen
+  #Limit the digits to 26
   for g in range(0,len(result)):
     if (result[g]/26) > 1:
       result[g] = result[g]%26
-  
+
+  #Convert digits to letters
   Cryptmess = []
   result_list = list(result)
   for h in range(0,len(result)):
@@ -85,7 +85,7 @@ if answer == 'e':
   print(res_string)
 
 
-  #Zahlen in Buchstaben umwandeln
+ 
 
 #Decryption
 elif answer == 'd':
@@ -110,11 +110,12 @@ elif answer == 'd':
       if result[d] <= 0:
         result[d] = result[d] + 26
   
-  #Zahlen auf 26 begrenzen
+  #Limit the digits to 26
   for g in range(0,len(result)):
     if (result[g]/26) > 1:
       result[g] = result[g]%26
 
+  #Convert digits to letters
   Cryptmess = []
   result_list = list(result)
   for h in range(0,len(result)):
@@ -126,7 +127,3 @@ elif answer == 'd':
 
 else:
   errorm2()
-
-#Zahlen in Buchstaben umwandeln
-
-
