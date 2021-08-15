@@ -37,7 +37,6 @@ keylist = []
 for a in range(0, keylen):
   keylist.append(rot_list[key[a]])
 
-#Fehler !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
 messlist = []
 for b in range(0, messlen):
   messlist.append(rot_list[message[b]])
