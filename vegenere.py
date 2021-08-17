@@ -17,6 +17,7 @@ def get_key(val):
  
     return "key doesn't exist"
 
+
 key = sys.argv[1]
 message = sys.argv[2]
 
@@ -35,12 +36,13 @@ keylen = len(key)
 messlen = len(message)
 
 #remove marks
-s = 0
+s = 1
 for y in range(0, messlen):
   if message[y] in marks:
     message = message[:y] + message[y+1:]
     message = message + "e"
     s = s + 1
+message = message + "e"
 message = message[:-s]
 messlen = len(message)
 
@@ -52,7 +54,6 @@ for a in range(0, keylen):
 messlist = []
 for b in range(0, messlen):
   messlist.append(rot_list[message[b]])
-
 #How often will the key be used
 fest = keylist
 if (messlen/keylen) >= 1:
