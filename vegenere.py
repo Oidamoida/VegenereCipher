@@ -9,18 +9,15 @@ def errorm():
 def errorm2():
   print('please put in "e"(encryption) or "d"(decryption) to operate!')
   
-
 def get_key(val):
     for key, value in rot_list.items():
          if val == value:
              return key
  
-    return "key doesn't exist"
+    return "symbol doesn't exist"
 
-#key = sys.argv[1]
-#message = sys.argv[2]
-key = 'dasjeorwefawsef'
-message = 'safwefs'
+key = sys.argv[1]
+message = sys.argv[2]
 
 print('Do you want to encrypt or decrypt a message? (e/d):')
 answer = input()
