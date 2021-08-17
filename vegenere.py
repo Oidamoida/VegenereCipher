@@ -17,9 +17,10 @@ def get_key(val):
  
     return "key doesn't exist"
 
-
-key = sys.argv[1]
-message = sys.argv[2]
+#key = sys.argv[1]
+#message = sys.argv[2]
+key = 'dasjeorwefawsef'
+message = 'safwefs'
 
 print('Do you want to encrypt or decrypt a message? (e/d):')
 answer = input()
@@ -73,8 +74,8 @@ if answer == 'e':
       result.append(messlist[d] + keylist[d])
   #key < text
   elif (messlen/keylen) <= 1:
-    for e in range(0,keylen):
-      result.append(messlist[e] + keylist[e])
+    for e in range(0,messlen):
+      result.append(messlist[e] + keylist[e])#Bug
   #key == text
   else:
     for f in range(0,keylen):
@@ -107,16 +108,16 @@ elif answer == 'd':
         result[d] = result[d] + 26
   #key < text
   elif (messlen/keylen) <= 1:
-    for e in range(0,keylen):
+    for e in range(0,messlen):
       result.append(messlist[e] - keylist[e])
-      if result[d] <= 0:
-        result[d] = result[d] + 26
+      if result[e] <= 0:
+        result[e] = result[e] + 26
   #key == text
   else:
     for f in range(0,keylen):
       result.append(messlist[f] - keylist[f])
-      if result[d] <= 0:
-        result[d] = result[d] + 26
+      if result[f] <= 0:
+        result[f] = result[f] + 26
   
   #Limit the digits to 26
   for g in range(0,len(result)):
